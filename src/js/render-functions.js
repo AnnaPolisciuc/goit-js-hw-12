@@ -30,7 +30,7 @@ export function renderPhotos(photos) {
 return photoMarkup;
    }).join('');
 
-    galleryContainer.innerHTML = markup;
+    galleryContainer.insertAdjacentHTML('beforeend', markup);
     lightbox.refresh();
 } 
 
@@ -44,4 +44,12 @@ export function showLoader() {
 
 export function hideLoader() {
     document.querySelector('.loader').classList.add('hidden');
+}
+
+export function showLoadMoreButton() {
+    document.querySelector('.btn').classList.remove('hidden');
+}
+
+export function hideLoadMoreButton() {
+    document.querySelector('.btn').classList.add('hidden');
 }
